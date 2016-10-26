@@ -9,23 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var form_component_1 = require('./components/form/form.component');
-var todo_list_component_1 = require('./components/todo-list/todo-list.component');
-var todo_item_component_1 = require('./components/todo-item/todo-item.component');
-var AppModule = (function () {
-    function AppModule() {
+var FormComponent = (function () {
+    function FormComponent() {
+        this.added = new core_1.EventEmitter();
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent, form_component_1.FormComponent, todo_list_component_1.TodoListComponent, todo_item_component_1.TodoItemComponent],
-            bootstrap: [app_component_1.AppComponent]
+    FormComponent.prototype.addTask = function (task) {
+        if (task) {
+            this.added.emit(task);
+        }
+    };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], FormComponent.prototype, "added", void 0);
+    FormComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'todo-form',
+            templateUrl: 'form.component.html',
+            styleUrls: ['form.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], FormComponent);
+    return FormComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.FormComponent = FormComponent;
+//# sourceMappingURL=form.component.js.map

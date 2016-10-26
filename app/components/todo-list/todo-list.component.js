@@ -9,23 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var form_component_1 = require('./components/form/form.component');
-var todo_list_component_1 = require('./components/todo-list/todo-list.component');
-var todo_item_component_1 = require('./components/todo-item/todo-item.component');
-var AppModule = (function () {
-    function AppModule() {
+var TodoListComponent = (function () {
+    function TodoListComponent() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent, form_component_1.FormComponent, todo_list_component_1.TodoListComponent, todo_item_component_1.TodoItemComponent],
-            bootstrap: [app_component_1.AppComponent]
+    TodoListComponent.prototype.todoDeleted = function (todo) {
+        if (todo) {
+            var item = this.todos.indexOf(todo);
+            if (item > -1) {
+                this.todos.splice(item, 1);
+            }
+        }
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], TodoListComponent.prototype, "todos", void 0);
+    TodoListComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'todo-list',
+            templateUrl: 'todo-list.component.html',
+            styleUrls: ['todo-list.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], TodoListComponent);
+    return TodoListComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.TodoListComponent = TodoListComponent;
+//# sourceMappingURL=todo-list.component.js.map

@@ -9,23 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'ToDo App';
-        this.todos = [];
+var TodoItemComponent = (function () {
+    function TodoItemComponent() {
+        this.deleted = new core_1.EventEmitter();
     }
-    AppComponent.prototype.addedTask = function (task) {
-        this.todos.push(task);
+    TodoItemComponent.prototype.delete = function () {
+        this.deleted.emit(this.todo);
     };
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], TodoItemComponent.prototype, "todo", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], TodoItemComponent.prototype, "deleted", void 0);
+    TodoItemComponent = __decorate([
         core_1.Component({
-            selector: 'todo-app',
-            templateUrl: './app/app.component.html',
-            styleUrls: ['./app/app.component.css']
+            moduleId: module.id,
+            selector: 'todo-item',
+            templateUrl: 'todo-item.component.html',
+            styleUrls: ['todo-item.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TodoItemComponent);
+    return TodoItemComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TodoItemComponent = TodoItemComponent;
+//# sourceMappingURL=todo-item.component.js.map
