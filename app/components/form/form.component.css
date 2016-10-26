@@ -1,3 +1,7 @@
-.button {
-    padding-left: 0;
+button {
+    box-shadow: 1px 1px 5px #337ab7;
+}
+
+input {
+    box-shadow: 0.5px 0.5px 5px lightgrey;
 }

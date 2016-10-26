@@ -1,11 +1,9 @@
 <div class="row">
-	<div class="col-sm-9 col-sm-offset-1 col-xs-8 col-xs-offset-1">
+	<div class="col-xs-10 col-sm-9 col-sm-offset-1">
 		<div class="form-group">
-			<input type="text" class="form-control" id="task" 
+			<input type="text" class="form-control"
 			placeholder="Add task" (keydown.enter)="addTask(task.value); task.value = ''" #task>
 		</div>
 	</div>
-	<div class="button col-sm-2 col-xs-2">
-		<button class="btn btn-primary" (click)="addTask(task.value); task.value = ''">Add</button>
-	</div>
+	<button class="btn btn-primary" (click)="addTask(task.value); task.value = ''">Add</button>
 </div>
