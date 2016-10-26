@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
+import { Todo } from "../../shared/todo";
+
 @Component({
     moduleId: module.id,
 	selector: 'todo-form',
@@ -9,15 +11,16 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 export class FormComponent {
 
-	@Output() added;
+	@Output() added: EventEmitter<Todo>;
 
 	constructor() {
-		this.added = new EventEmitter();
+		this.added = new EventEmitter<Todo>();
 	}
 
-    addTask(task) {
+    addTask(task: string) {
 		if (task) {
-			this.added.emit(task);
+			let todo = new Todo(task);
+			this.added.emit(todo);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { Todo } from "../../shared/todo";
+
 @Component({
     moduleId: module.id,
 	selector: 'todo-list',
@@ -8,9 +10,9 @@ import { Component, Input } from '@angular/core';
 })
 
 export class TodoListComponent {
-    @Input() todos;
+    @Input() todos: Todo[];
 
-	todoDeleted(todo) {
+	todoDeleted(todo: Todo) {
 		if (todo) {
 			let item = this.todos.indexOf(todo);
 			if (item > -1) {

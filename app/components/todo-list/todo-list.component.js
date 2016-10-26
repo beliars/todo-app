@@ -22,7 +22,7 @@ var TodoListComponent = (function () {
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', Array)
     ], TodoListComponent.prototype, "todos", void 0);
     TodoListComponent = __decorate([
         core_1.Component({

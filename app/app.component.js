@@ -14,8 +14,8 @@ var AppComponent = (function () {
         this.title = 'ToDo App';
         this.todos = [];
     }
-    AppComponent.prototype.addedTask = function (task) {
-        this.todos.push(task);
+    AppComponent.prototype.addedTask = function (todo) {
+        this.todos.push(todo);
     };
     AppComponent = __decorate([
         core_1.Component({

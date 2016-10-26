@@ -9,18 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var todo_1 = require("../../shared/todo");
 var FormComponent = (function () {
     function FormComponent() {
         this.added = new core_1.EventEmitter();
     }
     FormComponent.prototype.addTask = function (task) {
         if (task) {
-            this.added.emit(task);
+            var todo = new todo_1.Todo(task);
+            this.added.emit(todo);
         }
     };
     __decorate([
         core_1.Output(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', core_1.EventEmitter)
     ], FormComponent.prototype, "added", void 0);
     FormComponent = __decorate([
         core_1.Component({

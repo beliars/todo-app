@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var todo_1 = require("../../shared/todo");
 var TodoItemComponent = (function () {
     function TodoItemComponent() {
         this.deleted = new core_1.EventEmitter();
@@ -16,13 +17,16 @@ var TodoItemComponent = (function () {
     TodoItemComponent.prototype.delete = function () {
         this.deleted.emit(this.todo);
     };
+    TodoItemComponent.prototype.toggleDone = function () {
+        this.todo.done = !this.todo.done;
+    };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', todo_1.Todo)
     ], TodoItemComponent.prototype, "todo", void 0);
     __decorate([
         core_1.Output(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', core_1.EventEmitter)
     ], TodoItemComponent.prototype, "deleted", void 0);
     TodoItemComponent = __decorate([
         core_1.Component({

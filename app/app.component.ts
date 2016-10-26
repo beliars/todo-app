@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Todo } from "./shared/todo";
+
 
 @Component({
 	selector: 'todo-app',
@@ -10,14 +12,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 	title: string;
-	todos: string[];
+	todos: Todo[];
 
 	constructor() {
 		this.title = 'ToDo App';
 		this.todos = [];
 	}
 
-	addedTask(task) {
-		this.todos.push(task);
+	addedTask(todo: Todo) {
+		this.todos.push(todo);
 	}
 }
