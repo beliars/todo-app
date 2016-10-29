@@ -11,26 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var todo_model_1 = require("../../shared/todo.model");
 var todo_service_1 = require("../../shared/todo.service");
-var FormComponent = (function () {
-    function FormComponent(todoService) {
+var TodoFormComponent = (function () {
+    function TodoFormComponent(todoService) {
         this.todoService = todoService;
     }
-    FormComponent.prototype.addTask = function (task) {
+    TodoFormComponent.prototype.addTask = function (task) {
         if (task) {
             var todo = new todo_model_1.Todo(task);
             this.todoService.addTodo(todo);
         }
     };
-    FormComponent = __decorate([
+    TodoFormComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'todo-form',
-            templateUrl: 'form.component.html',
-            styleUrls: ['form.component.css']
+            templateUrl: 'todo-form.component.html',
+            styleUrls: ['todo-form.component.css']
         }), 
         __metadata('design:paramtypes', [todo_service_1.TodoService])
-    ], FormComponent);
-    return FormComponent;
+    ], TodoFormComponent);
+    return TodoFormComponent;
 }());
-exports.FormComponent = FormComponent;
-//# sourceMappingURL=form.component.js.map
+exports.TodoFormComponent = TodoFormComponent;
+//# sourceMappingURL=todo-form.component.js.map

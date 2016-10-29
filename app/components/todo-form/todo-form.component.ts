@@ -6,11 +6,11 @@ import { TodoService } from "../../shared/todo.service";
 @Component({
     moduleId: module.id,
 	selector: 'todo-form',
-	templateUrl: 'form.component.html',
-	styleUrls: ['form.component.css']
+	templateUrl: 'todo-form.component.html',
+	styleUrls: ['todo-form.component.css']
 })
 
-export class FormComponent {
+export class TodoFormComponent {
 
 
 	constructor(private todoService: TodoService) {	}
