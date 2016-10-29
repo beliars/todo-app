@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
+var app_component_1 = require('./components/app.component');
+var todo_service_1 = require('./shared/todo.service');
 var form_component_1 = require('./components/form/form.component');
 var todo_list_component_1 = require('./components/todo-list/todo-list.component');
 var todo_item_component_1 = require('./components/todo-item/todo-item.component');
@@ -21,6 +22,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
             declarations: [app_component_1.AppComponent, form_component_1.FormComponent, todo_list_component_1.TodoListComponent, todo_item_component_1.TodoItemComponent],
+            providers: [todo_service_1.TodoService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -1,23 +1,38 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Todo } from "../../shared/todo";
+import { Todo, ITodo } from '../../shared/todo.model';
+import { TodoService } from '../../shared/todo.service';
 
 @Component({
     moduleId: module.id,
 	selector: 'todo-list',
 	templateUrl: 'todo-list.component.html',
-	styleUrls: ['todo-list.component.css']
+	styleUrls: ['todo-list.component.css'],
 })
 
-export class TodoListComponent {
-    @Input() todos: Todo[];
+export class TodoListComponent implements OnInit {
 
-	todoDeleted(todo: Todo) {
-		if (todo) {
-			let item = this.todos.indexOf(todo);
-			if (item > -1) {
-				this.todos.splice(item, 1);
-			}
-		}
+	todos: ITodo[];
+
+	constructor(private todoService: TodoService) {
+		this.todos = [];
+	}
+
+	ngOnInit() {
+		this.todoService.getTodos().then(todos => this.todos = todos);
+	}
+
+	get sortedTodos(): ITodo[] {
+		return this.todos
+			.map((todos) => todos)
+			.sort((a, b) => {
+			if (a.done && !b.done) return 1;
+			else if (!a.done && b.done) return -1;
+			else return 0;
+		})
+	}
+
+	todoDeleted(todo: ITodo): void {
+		this.todoService.deleteTodo(todo);
 	}
 }

@@ -31,3 +31,7 @@
 .done {
     text-decoration: line-through;
 }
+
+input[type="checkbox"] {
+    vertical-align: middle;
+}

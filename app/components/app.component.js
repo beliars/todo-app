@@ -9,28 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var todo_model_1 = require("../../shared/todo.model");
-var todo_service_1 = require("../../shared/todo.service");
-var FormComponent = (function () {
-    function FormComponent(todoService) {
-        this.todoService = todoService;
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'ToDo App';
     }
-    FormComponent.prototype.addTask = function (task) {
-        if (task) {
-            var todo = new todo_model_1.Todo(task);
-            this.todoService.addTodo(todo);
-        }
-    };
-    FormComponent = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'todo-form',
-            templateUrl: 'form.component.html',
-            styleUrls: ['form.component.css']
+            selector: 'todo-app',
+            templateUrl: './app/components/app.component.html',
+            styleUrls: ['./app/components/app.component.css']
         }), 
-        __metadata('design:paramtypes', [todo_service_1.TodoService])
-    ], FormComponent);
-    return FormComponent;
+        __metadata('design:paramtypes', [])
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.FormComponent = FormComponent;
-//# sourceMappingURL=form.component.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

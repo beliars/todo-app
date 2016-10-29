@@ -9,23 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'ToDo App';
-        this.todos = [];
+var todo_data_1 = require('./todo.data');
+var TodoService = (function () {
+    function TodoService() {
     }
-    AppComponent.prototype.addedTask = function (todo) {
-        this.todos.push(todo);
+    TodoService.prototype.getTodos = function () {
+        return new Promise(function (resolve) { return setTimeout(function () { return resolve(todo_data_1.todos); }, 1000); });
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'todo-app',
-            templateUrl: './app/app.component.html',
-            styleUrls: ['./app/app.component.css']
-        }), 
+    TodoService.prototype.addTodo = function (todo) {
+        todo_data_1.todos.push(todo);
+    };
+    TodoService.prototype.deleteTodo = function (todo) {
+        var item = todo_data_1.todos.indexOf(todo);
+        if (item > -1) {
+            todo_data_1.todos.splice(item, 1);
+        }
+    };
+    TodoService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TodoService);
+    return TodoService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TodoService = TodoService;
+//# sourceMappingURL=todo.service.js.map
