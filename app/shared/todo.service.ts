@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -25,21 +25,41 @@ export class TodoService {
         return this.post(todo);
     }
 
+    saveTodo(todo: ITodo) {
+        return this.put(todo);
+    }
+
     deleteTodo(todo: ITodo) {
-       return this.delete(todo);
-        }
+        return this.delete(todo);
+    }
 
     private post(todo: ITodo): Promise<ITodo> {
+        let body = JSON.stringify(todo);
         let headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post(this.todosUrl, JSON.stringify(todo), {headers})
+        let options = new RequestOptions({headers});
+        console.log(todo);
+        return this.http.post(this.todosUrl, body, options)
             .toPromise()
             .then(res => res.json().data)
             .catch(this.handleError);
     }
 
+    private put(todo: ITodo): Promise<ITodo> {
+        let body = JSON.stringify(todo);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers });
+        console.log(todo);
+        return this.http.put(this.todosUrl + '/' + todo.id, body, options)
+            .toPromise()
+            .then(res => todo)
+            .catch(this.handleError);
+    }
+
     private delete(todo: ITodo): Promise<ITodo> {
         let headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.delete(this.todosUrl + '/' + todo.id , {headers})
+        let options = new RequestOptions({headers});
+        console.log(todo);
+        return this.http.delete(this.todosUrl + '/' + todo.id, options)
             .toPromise()
             .then(res => todo)
             .catch(this.handleError);

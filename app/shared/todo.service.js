@@ -25,19 +25,37 @@ var TodoService = (function () {
     TodoService.prototype.addTodo = function (todo) {
         return this.post(todo);
     };
+    TodoService.prototype.saveTodo = function (todo) {
+        return this.put(todo);
+    };
     TodoService.prototype.deleteTodo = function (todo) {
         return this.delete(todo);
     };
     TodoService.prototype.post = function (todo) {
+        var body = JSON.stringify(todo);
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.todosUrl, JSON.stringify(todo), { headers: headers })
+        var options = new http_1.RequestOptions({ headers: headers });
+        console.log(todo);
+        return this.http.post(this.todosUrl, body, options)
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
+    TodoService.prototype.put = function (todo) {
+        var body = JSON.stringify(todo);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        console.log(todo);
+        return this.http.put(this.todosUrl + '/' + todo.id, body, options)
+            .toPromise()
+            .then(function (res) { return todo; })
+            .catch(this.handleError);
+    };
     TodoService.prototype.delete = function (todo) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        return this.http.delete(this.todosUrl + '/' + todo.id, { headers: headers })
+        var options = new http_1.RequestOptions({ headers: headers });
+        console.log(todo);
+        return this.http.delete(this.todosUrl + '/' + todo.id, options)
             .toPromise()
             .then(function (res) { return todo; })
             .catch(this.handleError);

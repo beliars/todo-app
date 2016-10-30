@@ -14,18 +14,19 @@ var http_1 = require('@angular/http');
 // Imports for loading & configuring the in-memory web api
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./in-memory-data.service');
-var app_component_1 = require('./components/app.component');
 var todo_service_1 = require('./shared/todo.service');
-var todo_form_component_1 = require('./components/todo-form/todo-form.component');
-var todo_list_component_1 = require('./components/todo-list/todo-list.component');
-var todo_item_component_1 = require('./components/todo-item/todo-item.component');
+var app_component_1 = require('./components/app.component');
+var todos_component_1 = require('./components/todos/todos.component');
+var todo_form_component_1 = require('./components/todos/todo-form/todo-form.component');
+var todo_list_component_1 = require('./components/todos/todo-list/todo-list.component');
+var todo_item_component_1 = require('./components/todos/todo-item/todo-item.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)],
-            declarations: [app_component_1.AppComponent, todo_form_component_1.TodoFormComponent, todo_list_component_1.TodoListComponent, todo_item_component_1.TodoItemComponent],
+            declarations: [app_component_1.AppComponent, todos_component_1.TodosComponent, todo_form_component_1.TodoFormComponent, todo_list_component_1.TodoListComponent, todo_item_component_1.TodoItemComponent],
             providers: [todo_service_1.TodoService],
             bootstrap: [app_component_1.AppComponent]
         }), 

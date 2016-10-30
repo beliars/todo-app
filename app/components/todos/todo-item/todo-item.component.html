@@ -1,6 +1,6 @@
 <div class="bg-primary todo-item">
     <label [ngClass]="{done: todo.done}">
-        <input type="checkbox" (change)="toggleDone()">{{todo.task}}
+        <input type="checkbox" (change)="toggle()" [checked]="todo.done">{{todo.task}}
     </label>
     <button type="button" class="btn btn-danger" (click)="delete()"><i class="glyphicon glyphicon-trash"></i></button>
 </div>

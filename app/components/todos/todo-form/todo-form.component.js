@@ -9,35 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var todo_model_1 = require("../../shared/todo.model");
-var TodoItemComponent = (function () {
-    function TodoItemComponent() {
-        this.deleted = new core_1.EventEmitter();
+var todo_model_1 = require("../../../shared/todo.model");
+var TodoFormComponent = (function () {
+    function TodoFormComponent() {
+        this.created = new core_1.EventEmitter();
     }
-    TodoItemComponent.prototype.delete = function () {
-        this.deleted.emit(this.todo);
+    TodoFormComponent.prototype.create = function (task) {
+        if (task) {
+            var todo = new todo_model_1.Todo(task);
+            this.created.emit(todo);
+        }
     };
-    TodoItemComponent.prototype.toggleDone = function () {
-        this.todo.done = !this.todo.done;
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', todo_model_1.Todo)
-    ], TodoItemComponent.prototype, "todo", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
-    ], TodoItemComponent.prototype, "deleted", void 0);
-    TodoItemComponent = __decorate([
+    ], TodoFormComponent.prototype, "created", void 0);
+    TodoFormComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'todo-item',
-            templateUrl: 'todo-item.component.html',
-            styleUrls: ['todo-item.component.css']
+            selector: 'todo-form',
+            templateUrl: 'todo-form.component.html',
+            styleUrls: ['todo-form.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], TodoItemComponent);
-    return TodoItemComponent;
+    ], TodoFormComponent);
+    return TodoFormComponent;
 }());
-exports.TodoItemComponent = TodoItemComponent;
-//# sourceMappingURL=todo-item.component.js.map
+exports.TodoFormComponent = TodoFormComponent;
+//# sourceMappingURL=todo-form.component.js.map

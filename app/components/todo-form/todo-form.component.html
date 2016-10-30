@@ -1,9 +1,0 @@
-<div class="row">
-	<div class="col-xs-10 col-sm-9 col-sm-offset-1">
-		<div class="form-group">
-			<input type="text" class="form-control"
-			placeholder="Add task" (keydown.enter)="addTask(task.value); task.value = ''" #task>
-		</div>
-	</div>
-	<button class="btn btn-primary" (click)="addTask(task.value); task.value = ''">Add</button>
-</div>
