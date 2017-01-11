@@ -8,31 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var http_1 = require('@angular/http');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
 // Imports for loading & configuring the in-memory web api
-var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
-var in_memory_data_service_1 = require('./in-memory-data.service');
-var todo_service_1 = require('./shared/todo.service');
-var app_component_1 = require('./components/app.component');
-var todos_component_1 = require('./components/todos/todos.component');
-var todo_form_component_1 = require('./components/todos/todo-form/todo-form.component');
-var todo_list_component_1 = require('./components/todos/todo-list/todo-list.component');
-var todo_item_component_1 = require('./components/todos/todo-item/todo-item.component');
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./in-memory-data.service");
+var todo_service_1 = require("./shared/todo.service");
+var app_component_1 = require("./components/app.component");
+var todos_component_1 = require("./components/todos/todos.component");
+var todo_form_component_1 = require("./components/todos/todo-form/todo-form.component");
+var todo_list_component_1 = require("./components/todos/todo-list/todo-list.component");
+var todo_item_component_1 = require("./components/todos/todo-item/todo-item.component");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)],
-            declarations: [app_component_1.AppComponent, todos_component_1.TodosComponent, todo_form_component_1.TodoFormComponent, todo_list_component_1.TodoListComponent, todo_item_component_1.TodoItemComponent],
-            providers: [todo_service_1.TodoService],
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)],
+        declarations: [app_component_1.AppComponent, todos_component_1.TodosComponent, todo_form_component_1.TodoFormComponent, todo_list_component_1.TodoListComponent, todo_item_component_1.TodoItemComponent],
+        providers: [todo_service_1.TodoService],
+        bootstrap: [app_component_1.AppComponent]
+    }),
+    __metadata("design:paramtypes", [])
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

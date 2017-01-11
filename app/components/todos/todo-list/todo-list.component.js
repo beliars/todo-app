@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var TodoListComponent = (function () {
     function TodoListComponent() {
         this.deleted = new core_1.EventEmitter();
@@ -36,28 +36,28 @@ var TodoListComponent = (function () {
     TodoListComponent.prototype.onTodoToggled = function (todo) {
         this.toggled.emit(todo);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], TodoListComponent.prototype, "todos", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], TodoListComponent.prototype, "deleted", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], TodoListComponent.prototype, "toggled", void 0);
-    TodoListComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'todo-list',
-            templateUrl: 'todo-list.component.html',
-            styleUrls: ['todo-list.component.css'],
-        }), 
-        __metadata('design:paramtypes', [])
-    ], TodoListComponent);
     return TodoListComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], TodoListComponent.prototype, "todos", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], TodoListComponent.prototype, "deleted", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], TodoListComponent.prototype, "toggled", void 0);
+TodoListComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'todo-list',
+        templateUrl: 'todo-list.component.html',
+        styleUrls: ['todo-list.component.css'],
+    }),
+    __metadata("design:paramtypes", [])
+], TodoListComponent);
 exports.TodoListComponent = TodoListComponent;
 //# sourceMappingURL=todo-list.component.js.map

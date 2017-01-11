@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var todo_service_1 = require("../../shared/todo.service");
 var TodosComponent = (function () {
     function TodosComponent(todoService) {
@@ -39,16 +39,16 @@ var TodosComponent = (function () {
             this.todos.splice(index, 1);
         }
     };
-    TodosComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'todos',
-            templateUrl: 'todos.component.html',
-            styleUrls: ['todos.component.css']
-        }), 
-        __metadata('design:paramtypes', [todo_service_1.TodoService])
-    ], TodosComponent);
     return TodosComponent;
 }());
+TodosComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'todos',
+        templateUrl: 'todos.component.html',
+        styleUrls: ['todos.component.css']
+    }),
+    __metadata("design:paramtypes", [todo_service_1.TodoService])
+], TodosComponent);
 exports.TodosComponent = TodosComponent;
 //# sourceMappingURL=todos.component.js.map
